@@ -8,7 +8,7 @@ import time
 # Declaring Global Variables
 host = '127.0.0.1'
 port = 2010 
-msg = 0b1111111111111111111111111111111
+msg = 1
 bit0 = 0b0
 
 print('Building server ....')
@@ -43,8 +43,8 @@ while(1):
         if (time.time() - tt) * 1000 >= 500:
             bit0 = not bit0
 
-        # Repeat data
-        print('sending *' + str(bin(msg+bit0)) + '* ...')
+        # Send data
+        print('sending *' + str(msg) + '* ...')
         conn.sendall(bytes(msg))
 
         # Update timer and counter
