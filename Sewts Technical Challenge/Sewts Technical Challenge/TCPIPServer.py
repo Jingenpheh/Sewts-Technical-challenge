@@ -36,10 +36,11 @@ while(1):
     if (time.time() - st) * 1000 >= 100:
         
         # Look for the response
-        data = conn.recv(100)
+        data = conn.recv(4)
         if not data: break
         print('received *' + str(data) + '* ')
 
+        # Attempt to toggle Bit 0 but currently not used
         if (time.time() - tt) * 1000 >= 500:
             bit0 = not bit0
 
