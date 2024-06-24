@@ -43,6 +43,7 @@ while(1):
         # Attempt to toggle Bit 0 but currently not used
         if (time.time() - tt) * 1000 >= 500:
             bit0 = not bit0
+            tt = time.time()
 
         # Send data
         print('sending *' + str(msg) + '* ...')
