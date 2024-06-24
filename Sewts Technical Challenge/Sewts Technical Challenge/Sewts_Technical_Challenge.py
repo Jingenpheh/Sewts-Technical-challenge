@@ -6,7 +6,7 @@ import sys
 import time
 
 # Declaring Global Variables
-host = '192.168.1.199'
+host = '127.0.0.1'
 port = 2010
 msg = 1     
 
@@ -35,7 +35,7 @@ while(counter < 100):
         sock.sendall(bytes(msg))
 
         # Look for the response
-        data = sock.recv(100)
+        data = sock.recv(4)
         print('received *' + str(data) + '* ')
 
         # Update timer and counter
